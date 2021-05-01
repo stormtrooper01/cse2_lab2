@@ -1,7 +1,9 @@
 go_binary {
   name: "server",
   // TODO: Відкорегуйте ім'я пакета.
-  pkg: "github.com/roman-mazur/design-practice-2-template/cmd/server",
+  pkg: "github.com/stormtrooper01/cse2_lab2/cmd/server",
+  testPkg: "github.com/stormtrooper01/cse2_lab2/cmd/server",
+  outTestFile: "server.txt",
   srcs: [
     "httptools/**/*.go",
     "signal/**/*.go",
@@ -12,7 +14,9 @@ go_binary {
 go_binary {
   name: "lb",
   // TODO: Відкорегуйте ім'я пакета.
-  pkg: "github.com/roman-mazur/design-practice-2-template/cmd/lb",
+  pkg: "github.com/stormtrooper01/cse2_lab2/cmd/client",
+      testPkg: "github.com/stormtrooper01/cse2_lab2/cmd/client",
+      outTestFile: "client.txt",
   srcs: [
     "httptools/**/*.go",
     "signal/**/*.go",
@@ -22,3 +26,14 @@ go_binary {
 }
 
 // TODO: Додайте модуль для інтеграційних тестів.
+go_binary {
+  name: "lb",
+  pkg: "github.com/stormtrooper01/cse2_lab2/cmd/lb",
+  testPkg: "github.com/stormtrooper01/cse2_lab2/cmd/lb",
+  outTestFile: "lb.txt",
+  srcs: [
+    "httptools/**/*.go",
+    "signal/**/*.go",
+    "cmd/lb/*.go"
+  ],
+}
