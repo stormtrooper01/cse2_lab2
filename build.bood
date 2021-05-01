@@ -25,7 +25,7 @@ go_binary {
     "httptools/**/*.go",
     "signal/**/*.go",
     "cmd/lb/*.go"
-  ]
+  ],
   testPkg: "./cmd/lb/...",
   testSrcs: ["./cmd/lb/*_test.go"]
 }
