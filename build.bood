@@ -7,7 +7,6 @@ go_binary {
     "cmd/server/*.go"
   ],
   srcsExclude: ["**/*_test.go"],
-  testPkg: "./cmd/server",
 }
 
 go_binary {
@@ -19,14 +18,11 @@ go_binary {
     "cmd/lb/*.go"
   ],
   srcsExclude: ["**/*_test.go"],
-  testPkg:"github.com/stormtrooper01/cse2_lab2/cmd/lb",
 }
 
 go_binary {
   name: "integration",
   pkg: "github.com/stormtrooper01/cse2_lab2/integration",
-  testPkg: "github.com/stormtrooper01/cse2_lab2/integration",
-  optional: true,
   srcs: [],
   srcsExclude: ["**/*_test.go"],
 } 
