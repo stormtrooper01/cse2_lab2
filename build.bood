@@ -8,24 +8,24 @@ go_binary {
   ]
 }
 
-go_testedBinary {
+go_binary {
+    name: "client",
+    pkg: "github.com/stormtrooper01/cse2_lab2/cmd/client",
+      srcs: [
+        "cmd/client/*.go"
+      ]
+      testPkg: "./cmd/client/...",
+      testSrcs: ["./cmd/client/*_test.go"]
+}
+
+go_binary {
   name: "lb",
   pkg: "github.com/stormtrooper01/cse2_lab2/cmd/lb",
   srcs: [
     "httptools/**/*.go",
-    "server/**/*.go",
     "signal/**/*.go",
     "cmd/lb/*.go"
-  ],
+  ]
   testPkg: "./cmd/lb/...",
   testSrcs: ["./cmd/lb/*_test.go"]
-}
-
-go_testedBinary {
-  name: "integration",
-  pkg: "github.com/stormtrooper01/cse2_lab2/cmd/client",
-  srcs: [ "cmd/client/*.go" ],
-  testPkg: "./integration/...",
-  testSrcs: ["./integration/*_test.go"],
-  optional: true
 }
