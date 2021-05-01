@@ -13,7 +13,7 @@ go_binary {
     pkg: "github.com/stormtrooper01/cse2_lab2/cmd/client",
       srcs: [
         "cmd/client/*.go"
-      ]
+      ],
       testPkg: "./cmd/client/...",
       testSrcs: ["./cmd/client/*_test.go"]
 }
