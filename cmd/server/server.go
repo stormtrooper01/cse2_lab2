@@ -8,14 +8,16 @@ import (
 	"strconv"
 	"time"
 
-	"github.com/roman-mazur/design-practice-2-template/httptools"
-	"github.com/roman-mazur/design-practice-2-template/signal"
+	"github.com/stormtrooper01/cse2_lab2/httptools"
+	"github.com/stormtrooper01/cse2_lab2/signal"
 )
 
 var port = flag.Int("port", 8080, "server port")
 
 const confResponseDelaySec = "CONF_RESPONSE_DELAY_SEC"
 const confHealthFailure = "CONF_HEALTH_FAILURE"
+
+var TRAFFIC = 0
 
 func main() {
 	h := new(http.ServeMux)
@@ -27,7 +29,8 @@ func main() {
 			_, _ = rw.Write([]byte("FAILURE"))
 		} else {
 			rw.WriteHeader(http.StatusOK)
-			_, _ = rw.Write([]byte("OK"))
+            h :=strconv.Itoa(TRAFFIC)
+			_, _ = rw.Write([]byte(h))
 		}
 	})
 
@@ -45,6 +48,10 @@ func main() {
 		rw.WriteHeader(http.StatusOK)
 		_ = json.NewEncoder(rw).Encode([]string{
 			"1", "2",
+		}
+        _ = json.NewEncoder(rw).Encode(response)
+		for _, value := range response {
+			TRAFFIC += len(value)
 		})
 	})
 
