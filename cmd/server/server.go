@@ -46,13 +46,13 @@ func main() {
 
 		rw.Header().Set("content-type", "application/json")
 		rw.WriteHeader(http.StatusOK)
-		_ = json.NewEncoder(rw).Encode([]string{
+		var response = []string{
 			"1", "2",
 		}
-        _ = json.NewEncoder(rw).Encode(response)
+		_ = json.NewEncoder(rw).Encode(response)
 		for _, value := range response {
 			TRAFFIC += len(value)
-		})
+		}
 	})
 
 	h.Handle("/report", report)
