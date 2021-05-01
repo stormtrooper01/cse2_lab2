@@ -1,0 +1,5 @@
+go_binary {
+  name: "integration",
+  testPkg: "github.com/stormtrooper01/cse2_lab2/integration",
+  outTestFile: "integration.txt",
+}
