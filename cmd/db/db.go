@@ -3,7 +3,7 @@ package main
 import (
 	"encoding/json"
 	"flag"
-	"github.com/stormtrooper01/cse2_lab2/cmd/db/datastore"
+	"github.com/stormtrooper01/cse2_lab2/datastore"
 	"github.com/stormtrooper01/cse2_lab2/httptools"
 	"github.com/stormtrooper01/cse2_lab2/signal"
 	"io/ioutil"
